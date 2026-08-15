@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./.vercel/**)",
+      "Bash(vercel env:*)",
+      "Bash(drizzle-kit push:*)",
+      "Bash(drizzle-kit migrate:*)",
+      "Bash(psql:*)",
+      "Bash(git push:*)",
+      "Bash(gh release:*)"
+    ],
+    "ask": [
+      "Bash(npx drizzle-kit *)",
+      "Bash(gh pr merge:*)",
+      "Bash(vercel *)",
+      "Write(./db/schema/**)",
+      "Edit(./db/schema/**)"
+    ],
+    "allow": [
+      "Bash(npm run typecheck)",
+      "Bash(npm run lint)",
+      "Bash(npm run validate)",
+      "Bash(npm run build)",
+      "Bash(npm run dev)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ]
+  }
+}
