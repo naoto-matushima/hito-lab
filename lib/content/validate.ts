@@ -1,5 +1,6 @@
 import type { ArticleContent } from "./loader";
 import type { Masters } from "./masters";
+import type { IndustryHubContent, ThemeHubContent } from "@/lib/validation";
 
 export interface ValidationIssue {
   file: string;
@@ -56,4 +57,14 @@ export function validateTaxonomyReferences(articles: ArticleContent[], masters: 
       ...checkIdsExist(fm.cta, ctaIds, "cta", file),
     ];
   });
+}
+
+/** Hub Content（Theme Hub/Industry Hub）のsources参照がSource Masterに存在するか検証する */
+export function validateHubSources(
+  hubs: (ThemeHubContent | IndustryHubContent)[],
+  masters: Pick<Masters, "sources">,
+  fileFor: (hub: ThemeHubContent | IndustryHubContent) => string,
+): ValidationIssue[] {
+  const sourceIds = new Set(masters.sources.map((entry) => entry.id));
+  return hubs.flatMap((hub) => checkIdsExist(hub.sources, sourceIds, "sources", fileFor(hub)));
 }

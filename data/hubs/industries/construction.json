@@ -1,0 +1,30 @@
+{
+  "industryId": "construction",
+  "metaDescription": "建設業の人手不足の現状を統計データで解説。20年間の建設投資額・従事者数の推移と、採用・定着・DX・経営の課題を業界横断で整理します。",
+  "overview": "建設業は、人手不足研究所が最初に本格的に扱う業界です。仕事は増えているのに働き手は減り続けるという構造的なギャップが最も明確に表れており、採用・定着・業務改善・経営のすべての面で対応が急がれています。",
+  "currentSituation": "建設投資額は2004年度の51.9兆円から2024年度には73.0兆円へと40.7%増加した一方、建設業従事者は584万人から477万人へ18.3%減少しました。現場を支える建設技能者（職人）に限れば392万人から300万人へ23.5%減少しています。年代別では29歳以下が20年で36%減少し、65歳以上は116%増加するなど、若手減少と高齢化が同時に進んでいます。",
+  "keyStats": [
+    {
+      "value": "73.0兆円",
+      "label": "建設投資額（2024年度）",
+      "context": "2004年度 51.9兆円から+40.7%"
+    },
+    {
+      "value": "477万人",
+      "label": "建設業従事者（2024年）",
+      "context": "2004年 584万人から▲18.3%"
+    },
+    {
+      "value": "7.75倍",
+      "label": "建設躯体工事従事者の有効求人倍率",
+      "context": "全職種平均は1.19倍"
+    }
+  ],
+  "sources": [
+    "source_mlit_construction_investment_outlook",
+    "source_jfcc_construction_status",
+    "source_mhlw_koyo_shokai_joukyou_2025_04",
+    "source_mhlw_shokugyo_shokai_jigyo_hokoku",
+    "source_mhlw_koyo_doukou_chosa_2024"
+  ]
+}

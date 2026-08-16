@@ -5,3 +5,4 @@ export * from "./source";
 export * from "./company";
 export * from "./cta";
 export * from "./content";
+export * from "./hub";

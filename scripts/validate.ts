@@ -1,4 +1,14 @@
-import { getAllArticles, findDuplicateSlugs, loadMasters, validateTaxonomyReferences } from "@/lib/content";
+import {
+  findDuplicateSlugs,
+  getAllArticles,
+  loadIndustries,
+  loadMasters,
+  loadThemeHubContent,
+  loadIndustryHubContent,
+  validateHubSources,
+  validateTaxonomyReferences,
+} from "@/lib/content";
+import { ThemeIdSchema } from "@/lib/validation";
 
 function main() {
   console.log("人手不足研究所: content/ と data/ の検証を開始します。\n");
@@ -9,9 +19,27 @@ function main() {
   );
 
   const articles = getAllArticles();
-  console.log(`Article読み込み完了: ${articles.length}件\n`);
+  console.log(`Article読み込み完了: ${articles.length}件`);
 
-  const issues = [...findDuplicateSlugs(articles), ...validateTaxonomyReferences(articles, masters)];
+  const themeHubs = ThemeIdSchema.options
+    .map((themeId) => loadThemeHubContent(themeId))
+    .filter((hub): hub is NonNullable<typeof hub> => Boolean(hub));
+  const industryHubs = loadIndustries()
+    .filter((industry) => industry.status === "active" && industry.id !== "cross-industry")
+    .map((industry) => loadIndustryHubContent(industry.id))
+    .filter((hub): hub is NonNullable<typeof hub> => Boolean(hub));
+  console.log(`Hub Content読み込み完了: theme hub=${themeHubs.length} industry hub=${industryHubs.length}\n`);
+
+  const issues = [
+    ...findDuplicateSlugs(articles),
+    ...validateTaxonomyReferences(articles, masters),
+    ...validateHubSources(themeHubs, masters, (hub) => `data/hubs/themes/${(hub as { themeId: string }).themeId}.json`),
+    ...validateHubSources(
+      industryHubs,
+      masters,
+      (hub) => `data/hubs/industries/${(hub as { industryId: string }).industryId}.json`,
+    ),
+  ];
 
   if (issues.length > 0) {
     console.error(`validation失敗: ${issues.length}件のエラーがあります\n`);
