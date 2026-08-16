@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
+/*
+ * Design Token（docs/06-brand-ui.md 準拠）。
+ * Tailwindの標準カラーパレットは無効化し、ブランドトークンのみを再定義する。
+ * `.claude/rules/design.md`: 「Tailwindの標準色をそのまま使わない」を
+ * bg-blue-500等のクラス自体が存在しない形で機構的に担保する。
+ */
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+
+  /* Primary: Sage Green（06 §5） */
+  --color-primary: #547c73;
+  --color-primary-dark: #365d55;
+  --color-primary-light: #e5efec;
+  --color-primary-pale: #f1f6f4;
+
+  /* Accent: Terracotta（06 §6） */
+  --color-accent: #c96f55;
+  --color-accent-dark: #a8503b;
+  --color-accent-light: #f3ddd6;
+  --color-accent-pale: #faf0ec;
+
+  /* Background / Surface（06 §7） */
+  --color-background: #faf9f6;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f5f4f0;
+
+  /* Text / Border（06 §8） */
+  --color-text: #292d2b;
+  --color-text-secondary: #606864;
+  --color-text-muted: #858b88;
+  --color-border: #dddcd6;
+
+  /* Radius（06 §27。rounded-sm/md/lgとして利用可能になる） */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Font（06 §14） */
+  --font-brand: "Zen Maru Gothic", sans-serif;
+  --font-base: "Noto Sans JP", sans-serif;
+}
+
+/* Spacing（06 §25）。厳密な値が必要な箇所向けの参照用トークン。 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-base);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* 06 §16 */
+  h1 {
+    font-family: var(--font-brand);
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+  }
+
+  /* 06 §17 */
+  h2 {
+    font-family: var(--font-brand);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  /* 06 §18 */
+  h3 {
+    font-family: var(--font-base);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  /* 06 §19 */
+  p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  /* 06 §87: Keyboard Focusを消さない */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
 }
