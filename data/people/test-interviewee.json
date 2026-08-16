@@ -1,0 +1,9 @@
+{
+  "id": "person_test-interviewee",
+  "name": "サンプル太郎",
+  "slug": "test-interviewee",
+  "role": [],
+  "intervieweeType": ["executive"],
+  "position": "代表取締役（テストデータ）",
+  "organization": "株式会社サンプル建設"
+}

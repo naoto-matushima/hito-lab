@@ -100,7 +100,11 @@ export default async function ArticlePage({ params }: { params: Promise<ArticleP
     { label: frontmatter.title },
   ];
 
-  const articleJsonLd = buildArticleJsonLd(frontmatter, authors);
+  const articleJsonLd = buildArticleJsonLd(
+    frontmatter,
+    `/${frontmatter.primaryTheme}/${frontmatter.slug}/`,
+    authors,
+  );
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: "TOP", path: "/" },
     { name: themeEntry.label, path: themeEntry.url },

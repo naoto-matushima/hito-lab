@@ -6,5 +6,19 @@
   "industry": ["construction"],
   "location": {
     "prefecture": "toyama"
+  },
+  "website": {
+    "url": "https://example.com/",
+    "status": "active"
+  },
+  "recruitment": {
+    "page": {
+      "url": "https://example.com/careers",
+      "status": "active"
+    },
+    "jobLinks": [
+      { "label": "Indeed", "url": "https://example.com/indeed", "status": "active" },
+      { "label": "求人ボックス", "url": "https://example.com/kyujinbox", "status": "inactive" }
+    ]
   }
 }

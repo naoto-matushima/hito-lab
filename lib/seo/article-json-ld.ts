@@ -1,4 +1,4 @@
-import type { ArticleFrontmatter, Person } from "@/lib/validation";
+import type { Person } from "@/lib/validation";
 import { getSiteUrl, SITE_NAME } from "./site";
 
 export type BreadcrumbEntry = {
@@ -6,22 +6,32 @@ export type BreadcrumbEntry = {
   path: string;
 };
 
-/** docs/04-seo-aio.md §46: Article構造化データ */
-export function buildArticleJsonLd(article: ArticleFrontmatter, authors: Person[]) {
+export type ArticleJsonLdContent = {
+  title: string;
+  description: string;
+  publishedAt?: string;
+  updatedAt?: string;
+};
+
+/**
+ * docs/04-seo-aio.md §46: Article構造化データ。
+ * §47によりInterviewもArticle系を基本として利用するため、Report/Interviewでも共用する。
+ */
+export function buildArticleJsonLd(content: ArticleJsonLdContent, path: string, authors: Person[]) {
   const siteUrl = getSiteUrl();
-  const url = `${siteUrl}/${article.primaryTheme}/${article.slug}/`;
+  const url = `${siteUrl}${path}`;
 
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: article.title,
-    description: article.description,
+    headline: content.title,
+    description: content.description,
     author: authors.map((author) => ({
       "@type": "Person",
       name: author.name,
     })),
-    datePublished: article.publishedAt,
-    dateModified: article.updatedAt ?? article.publishedAt,
+    datePublished: content.publishedAt,
+    dateModified: content.updatedAt ?? content.publishedAt,
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,

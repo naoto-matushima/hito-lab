@@ -77,11 +77,14 @@ export const ResearchSchema = z.object({
   notes: z.string().optional(),
 });
 
+export type Research = z.infer<typeof ResearchSchema>;
+
 export const ReportDownloadSchema = z.object({
   enabled: z.boolean(),
   assetId: z.string().optional(),
   formId: z.string().optional(),
 });
+export type ReportDownload = z.infer<typeof ReportDownloadSchema>;
 
 export const ReportFrontmatterSchema = BaseContentFields.extend({
   contentType: z.literal("report"),
@@ -96,6 +99,7 @@ export const InterviewDetailSchema = z.object({
   interviewees: z.array(z.string()).default([]),
   companies: z.array(z.string()).default([]),
 });
+export type InterviewDetail = z.infer<typeof InterviewDetailSchema>;
 
 export const InterviewFrontmatterSchema = BaseContentFields.extend({
   contentType: z.literal("interview"),

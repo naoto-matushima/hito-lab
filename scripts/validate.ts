@@ -1,11 +1,14 @@
 import {
   findDuplicateSlugs,
   getAllArticles,
+  getAllInterviews,
+  getAllReports,
   loadIndustries,
   loadMasters,
   loadThemeHubContent,
   loadIndustryHubContent,
   validateHubSources,
+  validateInterviewReferences,
   validateTaxonomyReferences,
 } from "@/lib/content";
 import { ThemeIdSchema } from "@/lib/validation";
@@ -19,7 +22,9 @@ function main() {
   );
 
   const articles = getAllArticles();
-  console.log(`Article読み込み完了: ${articles.length}件`);
+  const reports = getAllReports();
+  const interviews = getAllInterviews();
+  console.log(`Content読み込み完了: article=${articles.length} report=${reports.length} interview=${interviews.length}`);
 
   const themeHubs = ThemeIdSchema.options
     .map((themeId) => loadThemeHubContent(themeId))
@@ -32,7 +37,12 @@ function main() {
 
   const issues = [
     ...findDuplicateSlugs(articles),
+    ...findDuplicateSlugs(reports),
+    ...findDuplicateSlugs(interviews),
     ...validateTaxonomyReferences(articles, masters),
+    ...validateTaxonomyReferences(reports, masters),
+    ...validateTaxonomyReferences(interviews, masters),
+    ...validateInterviewReferences(interviews, masters),
     ...validateHubSources(themeHubs, masters, (hub) => `data/hubs/themes/${(hub as { themeId: string }).themeId}.json`),
     ...validateHubSources(
       industryHubs,

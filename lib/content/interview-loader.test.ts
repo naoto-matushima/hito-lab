@@ -11,9 +11,8 @@ describe("getAllInterviews", () => {
     expect(interviews[0].frontmatter.slug).toBe("test-interview");
   });
 
-  it("実際のcontent/interviewsは現時点で空でもエラーにならない", () => {
+  it("実際のcontent/interviewsを読み込める（Phase 5テストフィクスチャ含む）", () => {
     expect(() => getAllInterviews()).not.toThrow();
-    expect(getAllInterviews()).toEqual([]);
   });
 });
 
@@ -21,5 +20,10 @@ describe("getPublishedInterviews", () => {
   it("publishedのInterviewのみ返す", () => {
     const published = getPublishedInterviews(path.join(FIXTURES_DIR, "interview-valid"));
     expect(published).toHaveLength(1);
+  });
+
+  it("実際のcontent/interviewsではdraftのテストフィクスチャが除外される", () => {
+    const published = getPublishedInterviews();
+    expect(published.every((interview) => interview.frontmatter.status === "published")).toBe(true);
   });
 });
