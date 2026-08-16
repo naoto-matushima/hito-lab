@@ -1,0 +1,12 @@
+[
+  {
+    "id": "construction-worker",
+    "label": "現場作業員",
+    "relatedIndustries": ["construction"]
+  },
+  {
+    "id": "site-manager",
+    "label": "施工管理",
+    "relatedIndustries": ["construction"]
+  }
+]

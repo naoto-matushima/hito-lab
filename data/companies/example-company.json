@@ -1,0 +1,10 @@
+{
+  "id": "company_example",
+  "name": "株式会社サンプル建設",
+  "slug": "example-company",
+  "description": "取材受け入れ確認用のダミー企業データ。実企業情報はPhase 8以降、取材成立後に投入する。",
+  "industry": ["construction"],
+  "location": {
+    "prefecture": "toyama"
+  }
+}

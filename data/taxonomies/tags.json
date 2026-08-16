@@ -1,0 +1,12 @@
+[
+  {
+    "id": "labor-shortage",
+    "label": "人手不足",
+    "description": "人手不足そのものを扱うコンテンツに付与するタグ。"
+  },
+  {
+    "id": "recruitment-cost",
+    "label": "採用コスト",
+    "description": "採用コストに関するタグ。"
+  }
+]

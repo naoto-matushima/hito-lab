@@ -1,0 +1,12 @@
+{
+  "id": "cta_construction-report",
+  "type": "report-download",
+  "title": "建設現場職の採用について詳しく知る",
+  "description": "調査結果をまとめたレポートを無料でダウンロードできます。",
+  "label": "レポートをダウンロード",
+  "target": {
+    "type": "report",
+    "id": "report_202608001"
+  },
+  "status": "active"
+}

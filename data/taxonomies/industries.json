@@ -1,0 +1,38 @@
+[
+  {
+    "id": "construction",
+    "label": "建設",
+    "description": "建設業。",
+    "status": "active"
+  },
+  {
+    "id": "nursing-care",
+    "label": "介護",
+    "description": "介護業。",
+    "status": "planned"
+  },
+  {
+    "id": "logistics",
+    "label": "物流",
+    "description": "物流業。",
+    "status": "planned"
+  },
+  {
+    "id": "manufacturing",
+    "label": "製造",
+    "description": "製造業。",
+    "status": "planned"
+  },
+  {
+    "id": "hospitality",
+    "label": "宿泊",
+    "description": "宿泊業。",
+    "status": "planned"
+  },
+  {
+    "id": "cross-industry",
+    "label": "業界横断",
+    "description": "複数業界にまたがるコンテンツ。個別業界IDと同時付与しない。",
+    "status": "active"
+  }
+]

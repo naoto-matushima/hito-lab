@@ -1,0 +1,34 @@
+[
+  {
+    "id": "recruiting",
+    "label": "採用・人材確保",
+    "shortLabel": "採用",
+    "brandLabel": "採る",
+    "description": "人材の採用・応募獲得に関するテーマ。",
+    "url": "/recruiting/"
+  },
+  {
+    "id": "organization",
+    "label": "組織・人事・定着",
+    "shortLabel": "定着",
+    "brandLabel": "活かす",
+    "description": "組織づくり・人事制度・定着に関するテーマ。",
+    "url": "/organization/"
+  },
+  {
+    "id": "dx",
+    "label": "業務改善・DX",
+    "shortLabel": "DX",
+    "brandLabel": "減らす",
+    "description": "業務改善・デジタル活用に関するテーマ。",
+    "url": "/dx/"
+  },
+  {
+    "id": "management",
+    "label": "経営改善・IT活用",
+    "shortLabel": "経営",
+    "brandLabel": "強くする",
+    "description": "経営改善・IT活用に関するテーマ。",
+    "url": "/management/"
+  }
+]

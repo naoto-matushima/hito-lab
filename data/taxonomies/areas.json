@@ -1,0 +1,18 @@
+[
+  {
+    "id": "nationwide",
+    "label": "全国",
+    "type": "nationwide"
+  },
+  {
+    "id": "hokuriku",
+    "label": "北陸",
+    "type": "region"
+  },
+  {
+    "id": "toyama",
+    "label": "富山県",
+    "type": "prefecture",
+    "parent": "hokuriku"
+  }
+]
