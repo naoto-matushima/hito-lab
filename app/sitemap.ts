@@ -26,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/interviews/",
     "/contact/",
     "/interview-request/",
+    "/about/",
+    "/privacy/",
   ];
 
   const articlePaths = getPublishedArticles().map(
