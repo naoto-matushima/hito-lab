@@ -6,3 +6,4 @@ export * from "./company";
 export * from "./cta";
 export * from "./content";
 export * from "./hub";
+export * from "./lead";

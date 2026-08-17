@@ -7,8 +7,10 @@ import { Card } from "@/components/ui";
  * docs/09 §34: 初期は建設のみ本格実装。status:plannedの業界は「準備中」表示に留め、
  * 存在しないHubへのリンクは張らない。
  */
+const NON_BROWSABLE_INDUSTRY_IDS = new Set(["cross-industry", "other"]);
+
 export function IndustryExplorer() {
-  const industries = loadIndustries().filter((industry) => industry.id !== "cross-industry");
+  const industries = loadIndustries().filter((industry) => !NON_BROWSABLE_INDUSTRY_IDS.has(industry.id));
 
   return (
     <section className="my-16">

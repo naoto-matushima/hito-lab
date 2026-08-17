@@ -8,7 +8,10 @@ import { Container } from "@/components/ui";
 import { AuthorList, SourceList } from "@/components/article";
 import { DownloadCta, ReportHeader, ResearchMethod } from "@/components/report";
 import { ArticleFeed, InterviewFeed } from "@/components/hub";
+import { ReportDownloadForm } from "@/components/form";
 import { buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/seo/article-json-ld";
+import { getFormIndustryOptions } from "@/lib/lead";
+import { shouldShowDownloadCta } from "@/components/report/download-cta";
 
 type ReportPageParams = { slug: string };
 
@@ -100,6 +103,19 @@ export default async function ReportDetailPage({ params }: { params: Promise<Rep
 
         <ArticleFeed title="関連記事" themeId={frontmatter.primaryTheme} />
         <InterviewFeed themeId={frontmatter.primaryTheme} />
+
+        {shouldShowDownloadCta(frontmatter.download) && (
+          <section className="my-12 rounded-lg border border-border bg-surface-subtle p-6">
+            <h2 className="text-lg">レポートをダウンロードする</h2>
+            <div className="mt-4">
+              <ReportDownloadForm
+                industries={getFormIndustryOptions()}
+                reportId={frontmatter.id}
+                reportTitle={frontmatter.title}
+              />
+            </div>
+          </section>
+        )}
 
         <AuthorList authors={authors} />
         <SourceList sources={sources} />

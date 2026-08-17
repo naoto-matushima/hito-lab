@@ -35,6 +35,10 @@
   --color-text-muted: #858b88;
   --color-border: #dddcd6;
 
+  /* Semantic Color: Error（06 §9。Primary/Accentとは役割を分離する） */
+  --color-error: #b3261e;
+  --color-error-pale: #fbeae9;
+
   /* Radius（06 §27。rounded-sm/md/lgとして利用可能になる） */
   --radius-sm: 4px;
   --radius-md: 8px;

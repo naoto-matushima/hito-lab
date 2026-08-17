@@ -30,6 +30,42 @@
     "status": "planned"
   },
   {
+    "id": "dining",
+    "label": "飲食",
+    "description": "飲食業。フォームの業界選択肢用（docs/07-conversion-lead.md §8）。",
+    "status": "planned"
+  },
+  {
+    "id": "retail",
+    "label": "小売",
+    "description": "小売業。フォームの業界選択肢用（docs/07-conversion-lead.md §8）。",
+    "status": "planned"
+  },
+  {
+    "id": "security",
+    "label": "警備",
+    "description": "警備業。フォームの業界選択肢用（docs/07-conversion-lead.md §8）。",
+    "status": "planned"
+  },
+  {
+    "id": "cleaning",
+    "label": "清掃",
+    "description": "清掃業。フォームの業界選択肢用（docs/07-conversion-lead.md §8）。",
+    "status": "planned"
+  },
+  {
+    "id": "facility-maintenance",
+    "label": "設備・メンテナンス",
+    "description": "設備・メンテナンス業。フォームの業界選択肢用（docs/07-conversion-lead.md §8）。",
+    "status": "planned"
+  },
+  {
+    "id": "other",
+    "label": "その他",
+    "description": "フォームの業界選択肢用（docs/07-conversion-lead.md §8）。コンテンツのindustries分類には使用しない。",
+    "status": "planned"
+  },
+  {
     "id": "cross-industry",
     "label": "業界横断",
     "description": "複数業界にまたがるコンテンツ。個別業界IDと同時付与しない。",

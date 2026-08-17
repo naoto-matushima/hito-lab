@@ -2,7 +2,7 @@ import { Button, Card } from "@/components/ui";
 
 /**
  * docs/05-page-template.md §53: 取材募集CTA。
- * 11-open-issues.md B-1（取材募集ページURL）は未決のため、既決定URLの/contact/を暫定使用する。
+ * 11-open-issues.md B-1で/interview-request/に確定（Phase 6）。
  */
 export function InterviewRequestCta() {
   return (
@@ -12,8 +12,8 @@ export function InterviewRequestCta() {
         人手不足研究所では、企業・経営者・働く方・専門家への取材を行っています。
       </p>
       <div className="mt-4">
-        <Button href="/contact/" variant="primary">
-          取材について相談する
+        <Button href="/interview-request/" variant="primary">
+          取材に応募する
         </Button>
       </div>
     </Card>
