@@ -21,6 +21,7 @@
 | `docs/10-launch-interview-plan.md` | 初期公開と取材開始 |
 | `docs/11-open-issues.md` | **未確定・不整合の一覧。着手前に必ず確認する** |
 | `docs/12-media-strategy.md` | 競合・差別化・チャネル・運用体制 |
+| `docs/13-migration-candidates.md` | bizdev-note.comからの既存記事移行候補一覧 |
 
 11に記載された未決事項は、勝手に一方を採用しない。判断が必要になったら実装を止めて確認する。
 
