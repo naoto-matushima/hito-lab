@@ -3,11 +3,15 @@ import { getFormIndustryOptions } from "@/lib/lead";
 import { Breadcrumb, Container } from "@/components/ui";
 import { ServiceLeadForm } from "@/components/form";
 
-/** 11-open-issues.md B-1で確定したURL */
+/**
+ * 11-open-issues.md B-1で確定したURL。
+ * docs/02-sitemap-url.md §「/consultation/はnoindex。sitemapにも含めない」に従う。
+ */
 export const metadata: Metadata = {
   title: "サービス相談",
   description: "採用・組織・業務改善・DX・経営改善に関するご相談を承っています。",
   alternates: { canonical: "/consultation/" },
+  robots: { index: false, follow: false },
 };
 
 export default function ConsultationPage() {

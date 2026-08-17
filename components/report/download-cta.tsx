@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui";
+import { trackEvent } from "@/lib/analytics/gtag";
 import type { ReportDownload } from "@/lib/validation";
 
 /** ページ描画から切り離してテスト可能にする */
@@ -23,7 +26,7 @@ export function DownloadCta({ download, variant = "primary", label = "レポー�
 
   return (
     <div className="my-8 rounded-lg border border-primary bg-primary-pale p-6 text-center">
-      <Button href="#download-form" variant={variant}>
+      <Button href="#download-form" variant={variant} onClick={() => trackEvent("report_cta_click")}>
         {label}
       </Button>
     </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
+import { TrackEvent } from "@/components/analytics/track-event";
 
 /** docs/02-sitemap-url.md: /thanks/*はnoindex・sitemap除外 */
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function ThanksReportPage() {
   return (
     <Container size="narrow" className="py-16 text-center">
+      <TrackEvent name="report_form_submit" />
       <h1>お申し込みありがとうございました</h1>
       <p className="mt-4 text-text-secondary">
         ご入力いただいたメールアドレス宛に、レポートの入手方法をお送りしました。

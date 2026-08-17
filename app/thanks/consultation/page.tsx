@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
+import { TrackEvent } from "@/components/analytics/track-event";
 
 export const metadata: Metadata = {
   title: "ご相談を受け付けました",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function ThanksConsultationPage() {
   return (
     <Container size="narrow" className="py-16 text-center">
+      <TrackEvent name="service_form_submit" />
       <h1>ご相談を受け付けました</h1>
       <p className="mt-4 text-text-secondary">内容を確認の上、担当者よりご連絡いたします。</p>
     </Container>

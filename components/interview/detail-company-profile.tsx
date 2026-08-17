@@ -1,3 +1,6 @@
+"use client";
+
+import { trackEvent } from "@/lib/analytics/gtag";
 import type { Company } from "@/lib/validation";
 
 /**
@@ -7,16 +10,16 @@ import type { Company } from "@/lib/validation";
 export function DetailCompanyProfile({ company }: { company?: Company }) {
   if (!company) return null;
 
-  const links: { label: string; url: string }[] = [];
+  const links: { label: string; url: string; event: string }[] = [];
   if (company.website?.status === "active" && company.website.url) {
-    links.push({ label: "公式サイト", url: company.website.url });
+    links.push({ label: "公式サイト", url: company.website.url, event: "company_website_click" });
   }
   if (company.recruitment?.page?.status === "active" && company.recruitment.page.url) {
-    links.push({ label: "採用ページ", url: company.recruitment.page.url });
+    links.push({ label: "採用ページ", url: company.recruitment.page.url, event: "recruitment_page_click" });
   }
   for (const jobLink of company.recruitment?.jobLinks ?? []) {
     if (jobLink.status === "active" && jobLink.url) {
-      links.push({ label: `${jobLink.label}で募集中の求人を見る`, url: jobLink.url });
+      links.push({ label: `${jobLink.label}で募集中の求人を見る`, url: jobLink.url, event: "job_link_click" });
     }
   }
 
@@ -28,7 +31,13 @@ export function DetailCompanyProfile({ company }: { company?: Company }) {
         <ul className="mt-4 flex flex-col gap-2">
           {links.map((link) => (
             <li key={link.url}>
-              <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+                onClick={() => trackEvent(link.event, { companyId: company.id })}
+              >
                 {link.label} →
               </a>
             </li>
