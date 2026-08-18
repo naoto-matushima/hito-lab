@@ -23,6 +23,7 @@
 | `docs/12-media-strategy.md` | 競合・差別化・チャネル・運用体制 |
 | `docs/13-migration-candidates.md` | bizdev-note.comからの既存記事移行候補一覧 |
 | `docs/14-launch-readiness.md` | QA結果とLaunch条件への適合状況 |
+| `docs/15-reference-sites.md` | 競合・参考メディア一覧（デザイン・構造検証用） |
 
 11に記載された未決事項は、勝手に一方を採用しない。判断が必要になったら実装を止めて確認する。
 

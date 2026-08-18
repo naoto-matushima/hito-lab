@@ -903,7 +903,17 @@ excel-workflow-improvement
 
 /search/
 
+/concept/hire/
+
+/concept/enable/
+
+/concept/reduce/
+
+/concept/strengthen/
+
 コンテンツ量が増えた時点で順次公開する。
+
+`/concept/*` はブランド4視点（採る・活かす・減らす・強くする）の独立ページ。Phase 1ではTOPとAbout内のセクションで扱い、独立ページは作らない。詳細は05 §16-2。
 
 # 42-2. 既存記事の移行とリダイレクト
 人手不足研究所は独立ドメインで運営する。新規事業開発ノート（bizdev-note.com）に公開済みの採用・人手不足系記事は、人手不足研究所へ移設する。
