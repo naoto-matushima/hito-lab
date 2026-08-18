@@ -11,7 +11,7 @@ import { ArticleFeed, InterviewFeed } from "@/components/hub";
 import { ReportDownloadForm } from "@/components/form";
 import { buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/seo/article-json-ld";
 import { getFormIndustryOptions } from "@/lib/lead";
-import { shouldShowDownloadCta } from "@/components/report/download-cta";
+import { shouldShowDownloadCta } from "@/components/report/download-cta-visibility";
 
 type ReportPageParams = { slug: string };
 

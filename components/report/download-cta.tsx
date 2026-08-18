@@ -3,11 +3,7 @@
 import { Button } from "@/components/ui";
 import { trackEvent } from "@/lib/analytics/gtag";
 import type { ReportDownload } from "@/lib/validation";
-
-/** ページ描画から切り離してテスト可能にする */
-export function shouldShowDownloadCta(download?: ReportDownload): boolean {
-  return Boolean(download?.enabled && download.assetId);
-}
+import { shouldShowDownloadCta } from "./download-cta-visibility";
 
 /**
  * docs/05-page-template.md §45: Download CTA。

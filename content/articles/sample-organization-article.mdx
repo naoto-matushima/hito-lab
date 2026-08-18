@@ -1,0 +1,57 @@
+---
+id: cnt_sample_organization
+title: "[テスト用] Organization Article テンプレート確認用サンプル"
+slug: sample-organization-article
+description: 組織・人事・定着テーマのArticleテンプレート表示確認のために作成したテスト用記事です。実際に公開する記事ではありません。
+contentType: article
+articleType: guide
+status: draft
+publishedAt: "2026-08-18"
+updatedAt: "2026-08-18"
+primaryTheme: organization
+themes:
+  - organization
+industries:
+  - construction
+areas:
+  - nationwide
+tags:
+  - labor-shortage
+authors:
+  - person_naoto-matsushima
+sources:
+  - source_mhlw_shingaku_rishoku_r4
+relatedContent: []
+cta: []
+featured: false
+---
+
+これはOrganization（組織・人事・定着）テーマのArticleテンプレート表示確認のためのテスト用記事です。デザイン確認用のダミーデータを含みます。実際の分析記事ではありません。
+
+## 若手定着はどこで崩れるのか（テスト表示用ダミーデータ）
+
+<KeyFinding
+  headline="入社3年以内の離職が最も多いのは「教育担当者が固定されていない」職場（テスト値）"
+  detail="表示確認用のダミーデータです"
+/>
+
+以下の数値はUIコンポーネントの表示確認用であり、実在する調査結果ではありません。
+
+<StatCardGroup>
+  <StatCard value="34%" label="入社3年以内離職率（テスト値）" context="ダミーデータ" />
+  <StatCard value="58%" label="教育担当が未固定の職場比率（テスト値）" context="ダミーデータ" />
+  <StatCard value="12ヶ月" label="平均定着期間の中央値（テスト値）" context="ダミーデータ" />
+</StatCardGroup>
+
+<DataTable
+  caption="教育体制別の定着率（テスト表示用ダミーデータ）"
+  columns={["教育体制", "1年後定着率", "3年後定着率"]}
+  rows={[
+    ["担当者固定・OJT計画あり", "88%", "71%"],
+    ["担当者固定・OJT計画なし", "76%", "58%"],
+    ["担当者未固定", "61%", "39%"],
+  ]}
+  highlightColumnIndex={2}
+/>
+
+このようにDataTableコンポーネントは列の強調表示に対応しています。本文はテンプレート確認用のため、これ以上の分析は記載していません。

@@ -11,9 +11,8 @@ describe("getAllReports", () => {
     expect(reports[0].frontmatter.slug).toBe("test-report");
   });
 
-  it("実際のcontent/reportsは現時点で空でもエラーにならない", () => {
+  it("実際のcontent/reportsを読み込んでもエラーにならない", () => {
     expect(() => getAllReports()).not.toThrow();
-    expect(getAllReports()).toEqual([]);
   });
 });
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { shouldShowDownloadCta } from "./download-cta";
+import { shouldShowDownloadCta } from "./download-cta-visibility";
 
 describe("shouldShowDownloadCta", () => {
   it("downloadが未設定の場合はfalse（09 AC: PDF未連携でもページ成立）", () => {

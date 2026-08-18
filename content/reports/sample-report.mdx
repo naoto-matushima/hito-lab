@@ -1,0 +1,77 @@
+---
+id: report_sample_test
+title: "[テスト用] Report Detailテンプレート確認用サンプルレポート"
+slug: sample-report
+description: Report Detailページのテンプレート（Research Method・Download CTA・Chart等）表示確認のために作成したテスト用レポートです。実際の調査ではありません。
+contentType: report
+status: draft
+publishedAt: "2026-08-18"
+updatedAt: "2026-08-18"
+primaryTheme: recruiting
+themes:
+  - recruiting
+industries:
+  - construction
+areas:
+  - nationwide
+tags:
+  - labor-shortage
+authors:
+  - person_naoto-matsushima
+sources:
+  - source_mlit_construction_2025
+  - source_mhlw_koyo_doukou_chosa_2024
+research:
+  year: 2026
+  types:
+    - 独自アンケート
+  period:
+    start: "2026-07-01"
+    end: "2026-07-31"
+  targetPopulation: 建設業の中小企業（テストデータ）
+  sampleSize: 120
+  methodology: Web アンケート（表示確認用のダミー調査概要です）
+download:
+  enabled: true
+  assetId: asset_test-placeholder
+relatedContent: []
+cta: []
+featured: false
+---
+
+これはReport Detailページのテンプレート（Research Method・Download CTA・本文Chart・関連コンテンツ）表示確認のためのテスト用レポートです。実際の調査データではありません。
+
+## 調査結果サマリー（テスト表示用ダミーデータ）
+
+<KeyFinding headline="回答企業の67%が「採用にかける時間が増えている」と回答（テスト値）" detail="表示確認用のダミーデータです" />
+
+<StatCardGroup>
+  <StatCard value="67%" label="採用工数増加を実感（テスト値）" context="ダミーデータ" />
+  <StatCard value="4.8ヶ月" label="平均採用リードタイム（テスト値）" context="ダミーデータ" />
+  <StatCard value="120社" label="回答企業数（テスト値）" context="ダミーデータ" />
+</StatCardGroup>
+
+<Chart
+  title="採用手法別の効果実感（テスト表示用ダミーデータ）"
+  unit="%"
+  data={[
+    { label: "ハローワーク", values: [{ seriesLabel: "効果あり", value: 32 }] },
+    { label: "人材紹介", values: [{ seriesLabel: "効果あり", value: 54 }] },
+    { label: "自社採用サイト", values: [{ seriesLabel: "効果あり", value: 41 }] },
+    { label: "SNS", values: [{ seriesLabel: "効果あり", value: 23 }] },
+  ]}
+  keyMessage="このChartはテンプレート確認用のダミーデータであり、実在する調査結果ではありません。"
+  source="表示確認用ダミーデータ"
+/>
+
+<DataTable
+  caption="採用手法別のコスト感（テスト表示用ダミーデータ）"
+  columns={["手法", "平均コスト（テスト値）", "満足度（テスト値）"]}
+  rows={[
+    ["ハローワーク", "0円", "普通"],
+    ["人材紹介", "110.6万円", "やや満足"],
+    ["自社採用サイト", "8万円", "満足"],
+  ]}
+/>
+
+本文はReport Detailテンプレートの表示確認用であり、これ以上の分析は記載していません。DownloadCTA・Research Method・関連記事・関連インタビューの各セクションもあわせてご確認ください。

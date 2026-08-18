@@ -1,0 +1,53 @@
+---
+id: cnt_sample_dx
+title: "[テスト用] DX Article テンプレート確認用サンプル"
+slug: sample-dx-article
+description: 業務改善・DXテーマのArticleテンプレート表示確認のために作成したテスト用記事です。実際に公開する記事ではありません。
+contentType: article
+articleType: guide
+status: draft
+publishedAt: "2026-08-18"
+updatedAt: "2026-08-18"
+primaryTheme: dx
+themes:
+  - dx
+industries:
+  - construction
+areas:
+  - nationwide
+tags:
+  - labor-shortage
+authors:
+  - person_naoto-matsushima
+sources:
+  - source_smrj_dx_chosa_2024
+relatedContent: []
+cta: []
+featured: false
+---
+
+これはDX（業務改善・DX）テーマのArticleテンプレート表示確認のためのテスト用記事です。デザイン確認用のダミーデータを含みます。実際の分析記事ではありません。
+
+## Excel管理からの脱却はどこで止まるか（テスト表示用ダミーデータ）
+
+<KeyFinding headline="ツール導入企業の62%が「定着せず元の運用に戻った」経験を持つ（テスト値）" detail="表示確認用のダミーデータです" />
+
+<StatCardGroup>
+  <StatCard value="62%" label="定着せず元に戻った経験（テスト値）" context="ダミーデータ" />
+  <StatCard value="3.2件" label="平均導入ツール数（テスト値）" context="ダミーデータ" />
+  <StatCard value="41%" label="専任IT担当者不在の企業比率（テスト値）" context="ダミーデータ" />
+</StatCardGroup>
+
+<Chart
+  title="規模別のDXツール定着率（テスト表示用ダミーデータ）"
+  unit="%"
+  data={[
+    { label: "〜20名", values: [{ seriesLabel: "導入率", value: 45 }, { seriesLabel: "定着率", value: 18 }] },
+    { label: "21〜50名", values: [{ seriesLabel: "導入率", value: 58 }, { seriesLabel: "定着率", value: 29 }] },
+    { label: "51名〜", values: [{ seriesLabel: "導入率", value: 71 }, { seriesLabel: "定着率", value: 47 }] },
+  ]}
+  keyMessage="このChartはテンプレート確認用のダミーデータであり、実在する調査結果ではありません。"
+  source="表示確認用ダミーデータ"
+/>
+
+Chartコンポーネントはサーバー生成SVGとして描画され、JavaScriptを使用しません。本文はテンプレート確認用のため、これ以上の分析は記載していません。
